@@ -25,9 +25,9 @@ const ConnectDB = async () => {
     }
 }
 // condition of database
-app.use(async (req , res , next) =>{
+app.use((req , res , next) =>{
     if (!connection) {
-        await ConnectDB()
+        ConnectDB()
     }
     next()
 })
